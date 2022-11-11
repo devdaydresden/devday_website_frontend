@@ -13,7 +13,7 @@ After that please use the nodeJS Version `18.12.0` with the command `nvm install
 The next step is to install angular cli globaly:
 * `npm install -g @angular/cli`
 
-Now you can use `npm install` in the `dev-day-frontend` directory.
+Now you can use `npm install` in the `./` directory.
 
 ### Run the Application
 
