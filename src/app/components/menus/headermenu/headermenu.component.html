@@ -1,0 +1,25 @@
+<nav *ngIf="menuItems" aria-label="Main Navigation">
+  <ul>
+    <ng-container *ngFor="let menuItem of menuItems">
+      <li *ngIf="!menuItem.children">
+        <a [routerLink]="['/page/'+menuItem.pageId]" routerLinkActive="router-link-active">{{menuItem.title}}</a>
+      </li>
+      <li *ngIf="menuItem.children" class="dropdown">
+        <!-- aria-expanded needs managed with Javascript -->
+        <button
+          type="button"
+          class="dropdown__title"
+          aria-expanded="false"
+          aria-controls="sweets-dropdown"
+        >
+          {{menuItem.title}}
+        </button>
+        <ul class="dropdown__menu" id="sweets-dropdown">
+          <li *ngFor="let subItem of menuItem.children">
+            <a [routerLink]="['/page/'+subItem.pageId]" routerLinkActive="router-link-active">{{subItem.title}}</a>
+          </li>
+        </ul>
+      </li>
+    </ng-container>
+  </ul>
+</nav>
