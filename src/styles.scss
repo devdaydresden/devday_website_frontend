@@ -1,1 +1,25 @@
+ @import"../node_modules/bootstrap/scss/bootstrap";
+
 /* You can add global styles to this file, and also import other style files */
+
+@import "./variables.scss";
+@import "./app/style-components/wp-block-columns.scss";
+@import "./app/style-components/pricing-table.scss";
+
+.container {
+  .container {
+    margin: 0 -12px;
+  }
+}
+
+
+.block {
+  --container-color: var(--bright-font);
+  --container-background: var(--bright-bg);
+  background: var(--container-background);
+  color: var(--container-color);
+  &.dark {
+    --container-color: var(--dark-font);
+    --container-background: var(--dark-bg);
+  }
+}

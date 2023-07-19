@@ -1,0 +1,74 @@
+
+.wp-block-lazyblock-sponsorenpakete {
+  background: var(--dark-bg);
+  border-bottom: 1px solid var(--dark-bg);
+
+  color: var(--dark-font);
+
+  padding-top: 20px;
+  overflow: hidden;
+
+  article {
+    background: #fcfcfc;
+
+    color: var(--bright-font);
+
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+    margin-top: 20px;
+    box-shadow: 0 0 12px black;
+
+    .package-header {
+      background: #ececec;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+
+      h3 {
+        margin: 0;
+        padding: 12px;
+
+        background: #40d5c5;
+        background: linear-gradient(14deg, #40d5c5 0%, #00b6a3 28%, #00b6a3 74%, #40d5c5 100%);
+
+        color: white;
+
+        text-align: center;
+        font-size: 28px;
+        text-shadow: 0px 1px 2px rgba(48, 63, 112, 0.5);
+
+      }
+
+      .cost {
+        padding: 8px 12px;
+
+        background: linear-gradient(14deg, #40d5c5 0%, #00b6a3 50%, #40d5c5 100%);
+
+        text-align: center;
+        font-weight: bold;
+        font-size: 24px;
+        border-top: 1px solid #186059;
+        border-bottom: 1px solid #a7a7a7;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+    }
+
+    .content {
+      padding: 12px;
+
+      list-style: none;
+      margin: 0;
+
+      li {
+        border-bottom: 1px solid #bfbfbf;
+        padding: 8px 12px;
+        text-align: center;
+        font-weight: 300;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
