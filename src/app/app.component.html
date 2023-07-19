@@ -1,4 +1,2 @@
-<ng-container *ngIf="headermenu | async as menuItems">
-  <dd-headermenu [menuItems]="menuItems"></dd-headermenu>
-</ng-container>
+<dd-headermenu [menuItems]="headermenu | async"></dd-headermenu>
 <router-outlet></router-outlet>
