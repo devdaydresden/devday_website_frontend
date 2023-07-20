@@ -5,6 +5,13 @@
 @import "./variables.scss";
 @import "./app/style-components/wp-block-columns.scss";
 @import "./app/style-components/pricing-table.scss";
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/SourceSansPro-Regular.woff2') format('woff2'), /* Замените путь на соответствующий файл шрифта */
+       url('./assets/SourceSansPro-Regular.woff') format('woff'); /* Замените путь на соответствующий файл шрифта */
+}
 
 .container {
   .container {
@@ -12,6 +19,10 @@
   }
 }
 
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  color: var(--text-color);
+}
 
 .block {
   --container-color: var(--bright-font);

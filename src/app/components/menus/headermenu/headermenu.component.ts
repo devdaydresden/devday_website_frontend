@@ -7,8 +7,15 @@ import { MenuItem } from 'src/app/services/menu.service';
   styleUrls: ['./headermenu.component.scss']
 })
 export class HeadermenuComponent {
+  
+  isMenuOpen = false;
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 
-  constructor() {}
+  constructor() {
+    
+  }
 
   @Input() menuItems: MenuItem[] = []
 
