@@ -8,7 +8,7 @@ import { MenuItem } from 'src/app/services/menu.service';
 })
 export class HeadermenuComponent {
   
-  isMenuOpen = false;
+  public isMenuOpen: boolean = false;
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }

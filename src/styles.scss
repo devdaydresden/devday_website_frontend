@@ -1,16 +1,54 @@
- @import"../node_modules/bootstrap/scss/bootstrap";
+ @import"../node_modules/bootstrap/scss/bootstrap.scss";
 
 /* You can add global styles to this file, and also import other style files */
 
 @import "./variables.scss";
 @import "./app/style-components/wp-block-columns.scss";
 @import "./app/style-components/pricing-table.scss";
+
+/* Source Sans Pro Regular */
 @font-face {
   font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: 400;
-  src: url('./assets/SourceSansPro-Regular.woff2') format('woff2'), /* Замените путь на соответствующий файл шрифта */
-       url('./assets/SourceSansPro-Regular.woff') format('woff'); /* Замените путь на соответствующий файл шрифта */
+  src: url('./assets/SourceSansPro-Regular.woff2') format('woff2'), 
+       url('./assets/SourceSansPro-Regular.woff') format('woff'); 
+}
+
+/* Source Sans Pro Bold */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./assets/SourceSansPro-Bold.woff2') format('woff2'), 
+       url('./assets/SourceSansPro-Bold.woff') format('woff'); 
+}
+
+/* Source Sans Pro ExtraLight */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: url('./assets/SourceSansPro-ExtraLight.woff2') format('woff2'), 
+       url('./assets/SourceSansPro-ExtraLight.woff') format('woff'); 
+}
+
+/* Source Sans Pro Light */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: url('./assets/SourceSansPro-Light.woff2') format('woff2'), 
+       url('./assets/SourceSansPro-Light.woff') format('woff'); 
+}
+
+/* Source Sans Pro SemiBold */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./assets/SourceSansPro-SemiBold.woff2') format('woff2'), 
+       url('./assets/SourceSansPro-SemiBold.woff') format('woff'); 
 }
 
 .container {
