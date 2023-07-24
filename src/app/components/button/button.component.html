@@ -1,0 +1,7 @@
+<button
+  [class]="buttonType"
+  [disabled]="buttonDisable"
+  [ngStyle]="{'opacity': buttonDisable ? '0.3' : ''}"
+  (click)="onClick()">
+  {{ buttonText }}
+</button>

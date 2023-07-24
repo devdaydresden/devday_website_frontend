@@ -10,7 +10,7 @@ import  { createCustomElement } from '@angular/elements';
 import { WorkshoplistComponent } from './workshoplist/workshoplist.component';
 import { HeadermenuComponent } from './components/menus/headermenu/headermenu.component';
 import { PageComponent } from './pages/page/page.component';
-import { LoginButtonComponent } from './components/login-button/login-button.component';
+import { ButtonComponent } from './components/button/button.component';
 
 
 
@@ -21,7 +21,7 @@ import { LoginButtonComponent } from './components/login-button/login-button.com
     WorkshoplistComponent,
     HeadermenuComponent,
     PageComponent,
-    LoginButtonComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,

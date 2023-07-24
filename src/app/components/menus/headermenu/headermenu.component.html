@@ -6,7 +6,7 @@
       </a>
     </div>
     <div class="col-sm-8 col-8  d-xl-none mobile-menu-trigger">
-      <button class="hamburger-menu" [ngClass]="{ 'open': isMenuOpen }" (click)="toggleMenu()">
+      <button class="mobile-menu-trigger-button" [ngClass]="{ 'open': isMenuOpen }" (click)="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
@@ -32,11 +32,14 @@
               </ul>
             </li>
           </ng-container>
-          <dd-login-button type="button" class="btn-dd-primary btn__login" >
-            Anmelden</dd-login-button>
+          <dd-button  [buttonText]="'ANMELDEN'"
+          [buttonType]="'normal'"
+          [buttonDisable]="false"
+          class="button-center">
+          </dd-button>
         </ul>
       </nav>
     </div>
-    
+
   </div>
 </header>
