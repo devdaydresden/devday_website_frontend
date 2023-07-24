@@ -1,5 +1,5 @@
 @import "../../../../variables.scss";
-
+@import "../../login-button/login-button.component.scss";
 @import "../../../../mixins.scss";
 
 .hamburger-menu {
@@ -8,7 +8,7 @@
   position: relative;
   line-height: 1;
   background-color: transparent;
-  border: 1px solid white;
+  border: 1px solid var(--color-white);
   border-radius: 0.25rem;
   top: 20%;
   margin-left: auto;
@@ -18,7 +18,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    background-color: #ffffff;
+    background-color: var(--color-white);
     transform: translate(-50%, -50%);
     transition: all 0.05s;
     &:nth-of-type(2) {
@@ -46,7 +46,7 @@
 }
 
 :host {
-  background-color: var(--menu-background-color-dark);
+  background-color: var(--menu-background-color);
   box-shadow: var(--box-shadow);
   padding: 0.4rem 1rem;
   position: sticky;
@@ -59,22 +59,9 @@
     font-family: inherit;
   }
 
-  .container-hamburger-menu {
+  .mobile-menu-trigger {
     display: flex;
     justify-content: flex-end;
-  }
-
-  .btn__login {
-    background-color:var(--menu-item-color);
-    width: 166px;
-    height: 41px;
-    margin: auto;
-    padding: inherit;
-    border-color: var(--menu-item-color);
-    &:active {
-      background-color:var(--menu-item-color-dark); 
-      border-color: var(--menu-item-color-dark); 
-    }
   }
 
   nav {
@@ -98,7 +85,7 @@
           text-decoration: none;
           text-align: center;
           display: inline-block;
-          color: #fff;
+          color: var(--color-white);
           font-size: 1.125rem;
 
           &:focus {
@@ -110,7 +97,7 @@
         .submenu__title {
           padding: 1rem 0.7rem;
           border-top: 3px solid transparent;
-          transition: var( --var-transition);
+          transition: var(--var-transition);
 
           &:hover,
           &:focus {
@@ -144,15 +131,20 @@
       display: inline-flex;
       align-items: center;
       position: relative;
+      // @include respond-below(md) {
+      //   width: 100%;
+      //   justify-content: center;
+      // }
       &::after {
         content: "";
         position: absolute;
-        top: calc(105% - 1.1rem);
-        left: 43%;
-        width: 12px;
-        height: 10px;
-        background-image: url("../../../../assets/arrow-down.svg");
-        background-repeat: no-repeat;
+        bottom: 2px;
+        left: 50%;
+        width: 8px;
+        height: 8px;
+        transform: rotate(45deg) translateX(-4px);
+        border-right: 2px solid ;
+        border-bottom: 2px solid;
       }
     }
 
@@ -161,13 +153,13 @@
       min-width: 15ch;
       left: 50%;
       top: calc(100% - 0.1rem);
-      transition: var( --var-transition);
+      transition: var(--var-transition);
       transform: rotateX(-90deg) translateX(-50%);
       transform-origin: top center;
       visibility: hidden;
       opacity: 0.3;
       padding: 0.5em 0;
-      background-color: #fff;
+      background-color: var(--color-white);
       border-radius: 4px;
       box-shadow: 0 0.15em 0.25em rgba(black, 0.25);
       @include respond-below(md) {
@@ -177,22 +169,22 @@
       a {
         color: var(--color-text-primary-dark);
         @include respond-below(md) {
-          color: white;
+          color: var(--color-white);
         }
         display: block;
         padding: 0.5em;
         opacity: 0;
-        transition: var( --var-transition);
+        transition: var(--var-transition);
 
         &:hover {
-          background-color: rgba($color-black, 0.15);
+          background-color: rgba(30, 30, 30, 0.15);
         }
 
         &:focus {
           outline: none;
-          background-color: rgba($color-black, 0.25);
+          background-color: rgba(30, 30, 30, 0.25);
           @include respond-below(md) {
-            background-color: rgba($color-black, 0.1);
+            background-color: rgba(30, 30, 30, 0.1);
             color: var(--menu-item-color);
           }
         }
@@ -203,12 +195,12 @@
       &:after {
         content: "";
         border: 0.5rem solid transparent;
-        border-bottom-color: #fff;
+        border-bottom-color: var(--color-white);
         position: absolute;
         top: calc(100% - 1rem);
         left: 50%;
         transform: translateX(-50%);
-        transition: var( --var-transition);
+        transition: var(--var-transition);
         opacity: 0;
         will-change: opacity;
       }
@@ -216,12 +208,13 @@
     &:hover,
     &:focus-within {
       .submenu__title {
-        border-top-color: pink;
+        border-top-color: var(--menu-item-color);
       }
       .submenu__menu {
         opacity: 1;
         transform: rotateX(0) translateX(-50%);
         visibility: visible;
+        margin-top: 1rem;
         @include respond-below(md) {
           position: relative;
         }
@@ -229,11 +222,10 @@
           opacity: 1;
         }
       }
-
-      // the triangle on top is removed
-      // &:after {
-      //   opacity: 1;
-      // }
+      &:after {
+        margin-top: 1rem;
+        opacity: 1;
+      }
     }
   }
 }
