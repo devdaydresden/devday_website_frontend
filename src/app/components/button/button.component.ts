@@ -1,5 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
+export enum ButtonType {
+  normal = 'normal',
+  outline = 'outline'
+}
 
 @Component({
   selector: 'dd-button',
@@ -9,13 +14,16 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ButtonComponent {
 
   @Input() buttonText: string = 'Anmelden ';
-  @Input() buttonType: 'normal' | 'big' = 'normal';
+  @Input() buttonType: ButtonType = ButtonType.normal;
+  @Input() bigButton: boolean = false;
   @Input() buttonDisable: boolean = false;
+  @Input() link: string | RouterLink = undefined;
+  @Input() externalLink: boolean = false;
+
   @Output() buttonAction: EventEmitter<void> = new EventEmitter();
 
   onClick(): void {
     this.buttonAction.emit();
-    console.log('Button clicked');
   }
 
 }
