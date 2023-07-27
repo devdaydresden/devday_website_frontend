@@ -3,5 +3,19 @@
   --dark-font: #fff;
   --bright-bg: #fff;
   --bright-font: #404040;
-
+  --highlight-bright: #00b6a3;
+  --highlight-dark: rgba(9, 68, 54, 0.86);;
+  --menu-background-color: rgba(36, 42, 57, 0.78);
+  --menu-background-color-dark: rgba(36, 42, 57, 1);
+  --color-text-primary-dark: #686a70;
+  --var-transition: 280ms all 120ms ease-out;
+  --color-box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.50);
+  --menu-item-color: var(--highlight-bright);
+  --menu-item-color-dark: var(--highlight-dark);
+  --button-background-color:var(--highlight-bright);
+  --button-border-color:var(--highlight-dark);
+  --button-hover-background-color:var(--highlight-dark);
+  --button-hover-border-color:var(--highlight-dark);
+  --box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.50);
+  --color-white: #ffffff;
 }

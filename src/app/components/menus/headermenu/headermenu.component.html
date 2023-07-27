@@ -1,25 +1,44 @@
-<nav *ngIf="menuItems" aria-label="Main Navigation">
-  <ul>
-    <ng-container *ngFor="let menuItem of menuItems">
-      <li *ngIf="!menuItem.children">
-        <a [routerLink]="['/page/'+menuItem.pageId]" routerLinkActive="router-link-active">{{menuItem.title}}</a>
-      </li>
-      <li *ngIf="menuItem.children" class="dropdown">
-        <!-- aria-expanded needs managed with Javascript -->
-        <button
-          type="button"
-          class="dropdown__title"
-          aria-expanded="false"
-          aria-controls="sweets-dropdown"
-        >
-          {{menuItem.title}}
-        </button>
-        <ul class="dropdown__menu" id="sweets-dropdown">
-          <li *ngFor="let subItem of menuItem.children">
-            <a [routerLink]="['/page/'+subItem.pageId]" routerLinkActive="router-link-active">{{subItem.title}}</a>
-          </li>
+<header class="container">
+  <div class="row justify-content-between">
+    <div class="col-sm-4 col-4 col-lg-2 col-xl-4">
+      <a routerLink="/">
+        <img src="/assets/devday-logo.svg" alt="Dev Day" width="175" height="59">
+      </a>
+    </div>
+    <div class="col-sm-8 col-8  d-xl-none mobile-menu-trigger">
+      <button class="mobile-menu-trigger-button" [ngClass]="{ 'open': isMenuOpen }" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-8 d-xl-block" [ngClass]="{ 'd-none': !isMenuOpen }">
+      <nav *ngIf="menuItems" aria-label="Main Navigation" [ngClass]="{ 'open': isMenuOpen }">
+        <ul>
+          <ng-container *ngFor="let menuItem of menuItems">
+            <li *ngIf="!menuItem.children">
+              <a [routerLink]="['/page/'+menuItem.pageId]" routerLinkActive="router-link-active">{{menuItem.title}}</a>
+            </li>
+            <li *ngIf="menuItem.children" class="submenu">
+              <!-- aria-expanded needs managed with Javascript -->
+              <button type="button" class="submenu__title" aria-expanded="false" aria-controls="sweets-submenu">
+                {{menuItem.title}}
+              </button>
+              <ul class="submenu__menu">
+                <li *ngFor="let subItem of menuItem.children">
+                  <a [routerLink]="['/page/'+subItem.pageId]"
+                    routerLinkActive="router-link-active">{{subItem.title}}</a>
+                </li>
+              </ul>
+            </li>
+          </ng-container>
+          <dd-button  
+          [buttonText]="'ANMELDEN'"
+          class="button-center">
+          </dd-button>
         </ul>
-      </li>
-    </ng-container>
-  </ul>
-</nav>
+      </nav>
+    </div>
+
+  </div>
+</header>

@@ -10,6 +10,8 @@ import  { createCustomElement } from '@angular/elements';
 import { WorkshoplistComponent } from './workshoplist/workshoplist.component';
 import { HeadermenuComponent } from './components/menus/headermenu/headermenu.component';
 import { PageComponent } from './pages/page/page.component';
+import { ButtonComponent } from './components/button/button.component';
+
 
 
 @NgModule({
@@ -18,7 +20,8 @@ import { PageComponent } from './pages/page/page.component';
     TimeplanComponent,
     WorkshoplistComponent,
     HeadermenuComponent,
-    PageComponent
+    PageComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,

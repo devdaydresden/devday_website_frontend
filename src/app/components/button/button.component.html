@@ -1,0 +1,25 @@
+<ng-container *ngIf="link !== undefined; else link">
+  <button
+    class="btn"
+    [attr.disabled]="buttonDisable ? true : null"
+    [class.disabled]="buttonDisable"
+    [class.big]="bigButton"
+    [class.outline]="buttonType === 'outline'"
+    (click)="onClick()">
+    {{ buttonText }}
+  </button>
+</ng-container>
+
+<ng-template #link>
+  <a
+    class="btn"
+    [attr.href]="externalLink ? link : null"
+    [attr.routerLink]="!externalLink ? link : null"
+    [attr.target]="externalLink ? '_blank' : '_self'"
+    [class.disabled]="buttonDisable"
+    [class.big]="bigButton"
+    [class.outline]="buttonType === 'outline'"
+    (click)="onClick()">
+    {{ buttonText }}
+  </a>
+</ng-template>
