@@ -11,6 +11,7 @@
 
   .introduction-text {
     margin-bottom: 5rem;
+    font-size: 1.5rem;
     text-align: left; //maybe center will be better
   }
 
@@ -72,6 +73,7 @@
         font-weight: 700;
         position: relative;
         margin-left: 10px;
+        font-size: 1rem;
 
         &:last-child {
           border-bottom: none;
