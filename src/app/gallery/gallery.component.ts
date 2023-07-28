@@ -17,5 +17,6 @@ export class GalleryComponent {
 interface GalleryData {
   previews: string[],
   links: string[],
-  columns: number
+  columns: number,
+  alttexts: string[]
 }
