@@ -1,0 +1,7 @@
+
+<h2 *ngIf="galleryData">Galerie mit {{ galleryData.columns }} Bildern pro Zeile</h2>
+<div class="gallery columns-{{ galleryData.columns }}" *ngIf="galleryData">
+    <a *ngFor="let preview of galleryData.previews; let index = index" [href]="galleryData.links[index]">
+      <img [src]="preview">
+    </a>
+</div>
