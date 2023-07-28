@@ -4,13 +4,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TimeplanComponent } from './timeplan/timeplan.component';
 
 import  { createCustomElement } from '@angular/elements';
-import { WorkshoplistComponent } from './workshoplist/workshoplist.component';
 import { HeadermenuComponent } from './components/menus/headermenu/headermenu.component';
 import { PageComponent } from './pages/page/page.component';
 import { ButtonComponent } from './components/button/button.component';
+
+import { WorkshoplistComponent } from './workshoplist/workshoplist.component';
+import { TimeplanComponent } from './timeplan/timeplan.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 
 
@@ -19,6 +21,7 @@ import { ButtonComponent } from './components/button/button.component';
     AppComponent,
     TimeplanComponent,
     WorkshoplistComponent,
+    GalleryComponent,
     HeadermenuComponent,
     PageComponent,
     ButtonComponent,
@@ -36,7 +39,8 @@ export class AppModule {
 
   private components: WebComponent[] = [
     {tag: 'dd-timeplan', type: TimeplanComponent},
-    {tag: 'dd-workshoplist', type: WorkshoplistComponent}
+    {tag: 'dd-workshoplist', type: WorkshoplistComponent},
+    {tag: 'dd-gallery', type: GalleryComponent}
   ];
 
   constructor(private injector: Injector) {
