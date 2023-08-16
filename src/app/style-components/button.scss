@@ -27,4 +27,12 @@
       font-size: 1.75rem;
       line-height: 2rem;
     }
-  }
+
+    &.outline {
+      background: transparent;
+      color: var(--button-border-color);
+      padding-right: 3rem;
+      border: 3px solid;
+      font-weight: bold;
+    }
+}

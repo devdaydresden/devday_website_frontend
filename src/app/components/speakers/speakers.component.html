@@ -1,0 +1,26 @@
+<div class="container justify-content-center">
+    <div class="row">
+        <div *ngFor="let speaker of (showAll ? (allSpeakers$ | async) : (allSpeakers$ | async | slice:0:3))"
+            class="col-md-4 mb-4">
+
+
+            <div class="custom-card" (click)="showSpeakerDetails(speaker.code)">
+                <div class="card-header">
+                    <img [src]="speaker.avatar" [alt]="speaker.name" class="card-img">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ speaker.name }}</h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 mb-12 button-container">
+            <dd-button [buttonText]="showAll ? 'Zeige weniger ' : 'Zeige mehr '" [buttonType]="ButtonType.outline"
+                class="toggle-content-button" (click)="toggleShowMore()" [ngClass]="showAll ? 'less' : 'more'">
+                <img *ngIf="showAll" src="../../../assets/icons/arrow-bottom.svg" alt="Weniger">
+            </dd-button>
+        </div>
+    </div>
+</div>

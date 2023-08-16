@@ -13,6 +13,8 @@ import { ButtonComponent } from './components/button/button.component';
 import { WorkshoplistComponent } from './workshoplist/workshoplist.component';
 import { TimeplanComponent } from './timeplan/timeplan.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { TestPageComponent } from './pages/test-page/test-page.component';
+import { SpeakersComponent } from './components/speakers/speakers.component';
 
 
 
@@ -25,6 +27,8 @@ import { GalleryComponent } from './gallery/gallery.component';
     HeadermenuComponent,
     PageComponent,
     ButtonComponent,
+    TestPageComponent,
+    SpeakersComponent,
   ],
   imports: [
     BrowserModule,
