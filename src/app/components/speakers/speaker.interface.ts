@@ -1,4 +1,4 @@
-export interface APISpeackers {
+export interface APISpeakers {
     count: number;
     next: null | string;
     previous: null | string;

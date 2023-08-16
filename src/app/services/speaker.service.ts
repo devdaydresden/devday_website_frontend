@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { Answer, Availability, Speaker } from "../components/speakers/speaker.interface";
-import { fakePretalx } from "../components/speakers/APISpeackers";
+import { fakePretalx } from "../components/speakers/APISpeakers";
 
 
 @Injectable({
