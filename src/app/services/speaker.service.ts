@@ -11,11 +11,14 @@ import { fakePretalx } from "../components/speakers/APISpeakers";
 export class SpeakerService {
 
     private _url: string = "pretax";
+    private mappedSpeakers: Speaker[] = [];
 
-    constructor(private http: HttpClient) { };
+    constructor(private http: HttpClient) {
+        this.mappedSpeakers = fakePretalx.results.map(this.mapSpeaker);
+    };
 
     // Mapping function for Availability
-    mapAvailability = (apiAvailability: any): Availability => ({
+    private mapAvailability = (apiAvailability: any): Availability => ({
         id: apiAvailability.id,
         start: apiAvailability.start,
         end: apiAvailability.end,
@@ -23,50 +26,37 @@ export class SpeakerService {
     });
 
     // Mapping function for Answer
-    mapAnswer = (apiAnswer: any): Answer => ({
+    private mapAnswer = (apiAnswer: any): Answer => ({
         question: apiAnswer.question,
         answer: apiAnswer.answer
     });
 
     // Mapping function for Speaker
-    mapSpeaker = (apiSpeaker: any): Speaker => {
-
-        //may need to be checked upon receipt of the object from the server
-        // const availabilities = Array.isArray(apiSpeaker.availabilities)
-        //     ? apiSpeaker.availabilities.map(this.mapAvailability)
-        //     : [];
-        // const answers = Array.isArray(apiSpeaker.answers)
-        //     ? apiSpeaker.answers.map(this.mapAnswer)
-        //     : [];
-        // return {
-        //     availabilities: availabilities,
-        //     answers: answers
-
+    private mapSpeaker = (apiSpeaker: any): Speaker => {
         return {
-                code: apiSpeaker.code,
-                name: apiSpeaker.name,
-                biography: apiSpeaker.biography,
-                submissions: apiSpeaker.submissions,
-                avatar: apiSpeaker.avatar,
-                email: apiSpeaker.email,
-                availabilities: apiSpeaker.availabilities.map(this.mapAvailability),
-                answers: apiSpeaker.answers.map(this.mapAnswer)
-            };
-
+            code: apiSpeaker.code,
+            name: apiSpeaker.name,
+            biography: apiSpeaker.biography,
+            submissions: apiSpeaker.submissions,
+            avatar: apiSpeaker.avatar,
+            email: apiSpeaker.email,
+            availabilities: apiSpeaker.availabilities.map(this.mapAvailability),
+            answers: apiSpeaker.answers.map(this.mapAnswer)
         };
 
-        mappedSpeakers: Speaker[] = fakePretalx.results.map(this.mapSpeaker);
+    };
 
-        getAllSpeakers = (): Observable<Speaker[]> => {
-            // return this.http.get<Speaker[]>(this._url);
-            return of(this.mappedSpeakers);
-        };
 
-        getSpeakerDetails = (code: string): Observable<Speaker> => {
-            // return this.http.get<Speaker>(this._url + "/" + id);
-            const speaker = this.mappedSpeakers.find(s => s.code === code);
-            return of(speaker);
-        };
+    public getAllSpeakers = (): Observable<Speaker[]> => {
+        // return this.http.get<Speaker[]>(this._url);
+        return of(this.mappedSpeakers);
+    };
 
-    }
+    public getSpeakerDetails = (code: string): Observable<Speaker> => {
+        // return this.http.get<Speaker>(this._url + "/" + id);
+        const speaker = this.mappedSpeakers.find(s => s.code === code);
+        return of(speaker);
+    };
+
+}
 

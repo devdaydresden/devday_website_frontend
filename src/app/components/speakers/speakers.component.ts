@@ -22,7 +22,12 @@ export class SpeakersComponent implements OnInit {
   constructor(private speakerService: SpeakerService) { }
 
   ngOnInit(): void {
-    this.allSpeakers$ = this.speakerService.getAllSpeakers()
+
+    //todo del setinterval
+    //this.allSpeakers$ = this.speakerService.getAllSpeakers()
+    setInterval(() => {
+      this.allSpeakers$ = this.speakerService.getAllSpeakers()
+        }, 1000);
   }
 
 

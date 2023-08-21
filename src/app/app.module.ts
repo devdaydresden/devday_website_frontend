@@ -15,6 +15,8 @@ import { TimeplanComponent } from './timeplan/timeplan.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { TestPageComponent } from './pages/test-page/test-page.component';
 import { SpeakersComponent } from './components/speakers/speakers.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { SpeakerDetailsComponent } from './pages/speaker-details/speaker-details.component';
 
 
 
@@ -29,6 +31,8 @@ import { SpeakersComponent } from './components/speakers/speakers.component';
     ButtonComponent,
     TestPageComponent,
     SpeakersComponent,
+    SpinnerComponent,
+    SpeakerDetailsComponent,
   ],
   imports: [
     BrowserModule,
