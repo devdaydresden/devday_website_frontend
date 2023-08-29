@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
-import { Answer, Availability, Speaker } from "../components/speakers/speaker.interface";
-import { fakePretalx } from "../components/speakers/APISpeakers";
+import { Answer, Availability, Speaker } from "../interfaces/speaker.interface";
+import {fakePretalxSpeaker } from "../mocks/APISpeakers";
 
 
 @Injectable({
@@ -14,7 +14,7 @@ export class SpeakerService {
     private mappedSpeakers: Speaker[] = [];
 
     constructor(private http: HttpClient) {
-        this.mappedSpeakers = fakePretalx.results.map(this.mapSpeaker);
+        this.mappedSpeakers =fakePretalxSpeaker.results.map(this.mapSpeaker);
     };
 
     // Mapping function for Availability

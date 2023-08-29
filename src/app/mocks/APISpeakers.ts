@@ -1,13 +1,13 @@
-import { APISpeakers, Answer, Availability, Speaker } from './speaker.interface'
+import { APISpeakers } from "../interfaces/speaker.interface";
 
-export const fakePretalx: APISpeakers = {
+export const fakePretalxSpeaker: APISpeakers = {
   count: 1,
   next: null,
   previous: null,
   results: [
     {
       code: "ABCDE",
-      name: "Max Mustermann",
+      name: "Ali G",
       biography: "Managing state and complex data in Angular",
       submissions: ["DEFAB"],
       avatar: "https://picsum.photos/200/300?random=3",
@@ -25,8 +25,8 @@ export const fakePretalx: APISpeakers = {
       ]
     },
     {
-      code: "XYZ123",
-      name: "Alexander Pronin",
+      code: "WEWEWE",
+      name: "WALL-E 🤖",
       biography: "A good speaker",
       submissions: ["DEFAB"],
       avatar: "https://picsum.photos/200/300?random=1",
@@ -45,8 +45,8 @@ export const fakePretalx: APISpeakers = {
     },
     {
       code: "BDF456",
-      name: "Einfach Tobias",
-      biography: "Wird schon",
+      name: "Barbie Puppe",
+      biography: "Die Puppe wurde von Ruth Handler, einer der Gründerinnen von Mattel, inspiriert, die ihre Tochter Barbara beobachtete, wie sie mit Puppen Rollenspiele durchführte. Diese Beobachtung führte zur Schaffung der Barbie-Puppe, die nach ihrer Tochter benannt wurde.",
       submissions: ["DEFAB"],
       avatar: "https://picsum.photos/200/300?random=2",
       availabilities: [
@@ -63,8 +63,8 @@ export const fakePretalx: APISpeakers = {
       ]
     },
     {
-      code: "BDF456",
-      name: "Versteckter Sprecher",
+      code: "BDF123",
+      name: "Ken Puppe",
       biography: "Jemand, der nicht angezeigt werden soll",
       submissions: ["DEFAB"],
       avatar: "https://picsum.photos/200/300?random=4",

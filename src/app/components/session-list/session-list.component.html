@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="content-area">
+    <div clas="row">
+      <div class="col-12 col-md-10 offset-md-1">
+        <h1>Sessionplan Dev Day 2023</h1>
+        <div>
+
+
+          <table class="session_table  d-none d-xl-block">
+            <thead>
+              <tr>
+                <th>Zeit</th>
+                <th *ngFor="let talk of talks$ | async ">
+                  <span>{{ talk.slot.room }}</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="let group of groupedSessions">
+                <tr>
+                  <td class="td_time">{{ group[0].slot.start | date:'HH:mm' }} - {{ group[0].slot.end | date:'HH:mm' }}
+                  </td>
+                  <td *ngFor="let talk of talks$ | async ">
+                    <p>
+                      <a class="title">{{ getSessionForRoom(group, talk.slot.room)?.title }}</a>
+                    </p>
+                    <ng-container *ngFor="let speaker of getSessionForRoom(group, talk.slot.room)?.speakers">
+                      <a class="speaker-link"  [routerLink]="['/speaker-details', speaker.code]">{{speaker.name}} </a>
+                    </ng-container>
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+
+          <table class="session_table_small">
+            <tbody class="container d-xl-none">
+              <ng-container *ngFor="let group of groupedSessions">
+                <tr class="row">
+                  <td class="td_time col-12 col-sm-3">{{ group[0].slot.start | date:'HH:mm' }} - {{ group[0].slot.end |
+                    date:'HH:mm' }}</td>
+                  <div class="test col-12 col-sm-8">
+                    <ng-container *ngFor="let talk of talks$ | async ">
+                      <td class="td_topic" *ngIf="getSessionForRoom(group, talk.slot.room)">
+                        <p>
+                          {{getSessionForRoom(group, talk.slot.room)?.slot.room}}
+                        </p>
+                        <p>
+                          <a class="speaker-link">{{getSessionForRoom(group, talk.slot.room)?.title}}</a>
+                        </p>
+                        <ng-container *ngFor="let speaker of getSessionForRoom(group, talk.slot.room)?.speakers">
+                          <a class="speaker-link">{{speaker.name}} </a>
+                        </ng-container>
+                      </td>
+                    </ng-container>
+                  </div>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

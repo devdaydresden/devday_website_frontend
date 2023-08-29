@@ -17,6 +17,7 @@ import { TestPageComponent } from './pages/test-page/test-page.component';
 import { SpeakersComponent } from './components/speakers/speakers.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SpeakerDetailsComponent } from './pages/speaker-details/speaker-details.component';
+import { SessionListComponent } from './components/session-list/session-list.component';
 
 
 
@@ -33,6 +34,7 @@ import { SpeakerDetailsComponent } from './pages/speaker-details/speaker-details
     SpeakersComponent,
     SpinnerComponent,
     SpeakerDetailsComponent,
+    SessionListComponent,
   ],
   imports: [
     BrowserModule,

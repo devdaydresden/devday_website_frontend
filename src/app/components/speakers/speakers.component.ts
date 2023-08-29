@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SpeakerService } from '../../services/speaker.service';
 import { tap } from 'rxjs/operators';
-import { Speaker } from './speaker.interface';
+import { Speaker } from '../../interfaces/speaker.interface';
 import { ButtonType } from '../button/button.component';
 import { Observable } from 'rxjs';
 
