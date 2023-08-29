@@ -12,7 +12,7 @@ import { ButtonComponent } from './components/button/button.component';
 
 import { WorkshoplistComponent } from './workshoplist/workshoplist.component';
 import { TimeplanComponent } from './timeplan/timeplan.component';
-import { GalleryComponent } from './gallery/gallery.component';
+import { GalleryComponent } from './web-components/gallery/gallery.component';
 
 
 
