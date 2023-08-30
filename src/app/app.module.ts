@@ -13,6 +13,9 @@ import { ButtonComponent } from './components/button/button.component';
 import { WorkshoplistComponent } from './workshoplist/workshoplist.component';
 import { TimeplanComponent } from './timeplan/timeplan.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { TestGalleryComponent } from './pages/test-gallery/test-gallery.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 
@@ -25,11 +28,13 @@ import { GalleryComponent } from './gallery/gallery.component';
     HeadermenuComponent,
     PageComponent,
     ButtonComponent,
+    TestGalleryComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
