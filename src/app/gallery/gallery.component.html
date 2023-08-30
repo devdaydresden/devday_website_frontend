@@ -1,10 +1,27 @@
-
 <h2 *ngIf="galleryData">Galerie mit {{ galleryData.columns }} Bildern pro Zeile</h2>
 <div class="gallery columns-{{ galleryData.columns }}" *ngIf="galleryData">
-    <a
-      *ngFor="let preview of galleryData.previews; let index = index"
-      [href]="galleryData.links[index]"
-      [title]="'Bild ' + galleryData.alttexts[index] + 'öffnen'">
-      <img [src]="preview" [alt]="galleryData.alttexts[index]">
-    </a>
+  <!-- <a *ngFor="let preview of galleryData.previews; let index = index" [href]="galleryData.links[index]" -->
+  <a *ngFor="let preview of galleryData.previews; let index = index"
+    [title]="'Bild ' + galleryData.alttexts[index] + 'öffnen'">
+    <img [src]="preview" [alt]="galleryData.alttexts[index]" (click)="onPreviewClick(index)">
+  </a>
+</div>
+
+<div class="gallery-lightbox-container maskAnimation">
+  <div class="lightbox" *ngIf="showMask">
+    <span class="count"> {{currentLightboxImageIndex + 1}}/{{totalImagesCount}}</span>
+    <button class="close-btn" *ngIf="previewImages" (click)="onClosePreviewClick()">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <button class="btn-carousel btn-lightbox-prev" *ngIf="controls" (click)="prev()">
+      <i class="fas fa-arrow-circle-left i-carousel i-prev"></i>
+    </button>
+    <button class="btn-carousel btn-lightbox-next" *ngIf="controls" (click)="next()">
+      <i class="fas fa-arrow-circle-right  i-carousel i-next"></i>
+    </button>
+    <div class="lightbox-img animation">
+      <img class="lightbox-img" [src]="currentLightboxImage" [alt]="alttexts">
+    </div>
+  </div>
 </div>
