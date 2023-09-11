@@ -1,0 +1,27 @@
+:host {
+  .info {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: left;
+  }
+  .col-highlight {
+    background: linear-gradient(
+      14deg,
+      var(--fotos-backround-gardient-start) 0%,
+      var(--fotos-backround-gardient-end) 100%
+    );
+    color: #ffffff;
+  }
+  .content-sidebar img {
+    max-width: 100%;
+  }
+  h3 {
+    padding-top: 1rem;
+  }
+  .session-link {
+    color: #35a4a3;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}

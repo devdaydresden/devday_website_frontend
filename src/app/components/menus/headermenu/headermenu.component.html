@@ -1,18 +1,18 @@
-<header class="container">
+<header class="container header-menu">
   <div class="row justify-content-between">
     <div class="col-sm-4 col-4 col-lg-2 col-xl-4">
       <a routerLink="/">
         <img src="/assets/devday-logo.svg" alt="Dev Day" width="175" height="59">
       </a>
     </div>
-    <div class="col-sm-8 col-8  d-xl-none mobile-menu-trigger">
+    <div class="col-sm-8 col-8  col-lg-2 d-lg-none mobile-menu-trigger">
       <button class="mobile-menu-trigger-button" [ngClass]="{ 'open': isMenuOpen }" (click)="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
       </button>
     </div>
-    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-8 d-xl-block" [ngClass]="{ 'd-none': !isMenuOpen }">
+    <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 d-lg-block" [ngClass]="{ 'd-none': !isMenuOpen }">
       <nav *ngIf="menuItems" aria-label="Main Navigation" [ngClass]="{ 'open': isMenuOpen }">
         <ul>
           <ng-container *ngFor="let menuItem of menuItems">
@@ -39,6 +39,5 @@
         </ul>
       </nav>
     </div>
-
   </div>
 </header>
