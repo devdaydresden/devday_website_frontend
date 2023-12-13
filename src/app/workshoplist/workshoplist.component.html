@@ -1,0 +1,11 @@
+<p *ngIf="!todos">loading...</p>
+<p *ngIf="!todos">Foo: {{ foo }}</p>
+<p *ngIf="!todos">List: {{ list }}</p>
+<ul *ngIf="todos">
+
+  <li *ngFor="let todo of todos;">
+    <h3>{{ todo.title }}</h3>
+    <span *ngIf="todo.completed">completed</span>
+    <span *ngIf="!todo.completed">not completed</span>
+  </li>
+</ul>
